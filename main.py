@@ -1,3 +1,5 @@
+import argparse
+
 from scanner import VaultSweepScanner
 
 def print_banner():
@@ -13,10 +15,15 @@ __     __          _ _   ____
     )
 
 def main():
+    parser = argparse.ArgumentParser(description="VaultSweep - Windows security baseline scanner")
+    parser.add_argument("--output-text", default="vaultsweep_report.txt", help="Path for text report output.")
+    parser.add_argument("--output-json", default=None, help="Optional path for JSON report output.")
+    args = parser.parse_args()
+
     print_banner()
     scanner = VaultSweepScanner()
     scanner.run_all_checks()
-    scanner.generate_report()
+    scanner.generate_report(text_path=args.output_text, json_path=args.output_json)
 
 if __name__ == "__main__":
     main()
