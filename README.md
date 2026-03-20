@@ -49,3 +49,10 @@ python -m pytest -q
 ## License
 
 MIT
+
+## Docs
+
+- `docs/README.md`: docs index for the repository
+- `docs/IMPLEMENTATION-CHECKLIST.md`
+- `docs/PROJECT-VISION.md`
+- `docs/STACK-INVENTORY.md`
